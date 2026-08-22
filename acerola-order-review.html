@@ -18,11 +18,11 @@
     .hero p{font-size:16px;color:var(--ink);max-width:none;margin:0}
     .hero-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.pill{border:1px solid #d1d5da;background:#f6f8fa;padding:4px 9px;border-radius:3px;font-size:12px;font-weight:600;color:#444d56}
     .content{padding:26px 0 0}
-    .executive{display:grid;grid-template-columns:1.35fr .65fr;gap:16px;margin:0}
+    .executive{display:block;margin:0}
     .card{background:#fff;border:1px solid var(--line);border-radius:3px;padding:18px;box-shadow:none}
-    .card h2,.card h3{margin-top:0}.verdict{border-left:4px solid var(--red)}
+    .card h2,.card h3{margin-top:0}.executive-copy{margin-top:24px;padding:0 2px}.executive-copy h2{margin:5px 0 10px;font-size:24px;line-height:1.35}.executive-copy p{margin:0;color:var(--muted)}
     .verdict strong{color:var(--red)}
-    .metric-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.metric{background:var(--soft);border-radius:3px;padding:12px}.metric b{display:block;color:var(--navy);font-size:21px;line-height:1.2}.metric span{font-size:12px;color:var(--muted)}
+    .metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.metric{background:var(--soft);border-radius:3px;padding:16px}.metric b{display:block;color:var(--navy);font-size:24px;line-height:1.2}.metric span{font-size:12px;color:var(--muted)}
     section{margin-top:42px}.section-kicker{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.04em;text-transform:uppercase}.section-title{font-size:24px;color:var(--navy);margin:5px 0 16px;padding-bottom:8px;border-bottom:1px solid #eaecef;letter-spacing:-.02em}.section-lead{color:var(--muted);max-width:850px;margin:0 0 20px}
     .timeline{position:relative;margin:22px 0 0;padding-left:106px}.timeline:before{content:"";position:absolute;left:82px;top:8px;bottom:18px;width:2px;background:#dfe2e5}
     .event{position:relative;margin:0 0 16px;background:#fff;border:1px solid var(--line);border-radius:3px;padding:17px 18px}.event:before{content:"";position:absolute;left:-31px;top:22px;width:11px;height:11px;border-radius:50%;background:var(--blue);border:3px solid #fff;box-shadow:0 0 0 1px #c8e1ff}.event-date{position:absolute;left:-106px;top:18px;width:68px;text-align:right;font-size:13px;font-weight:600;color:var(--navy)}
@@ -35,7 +35,7 @@
     .checklist{columns:2;column-gap:30px;list-style:none;padding:0}.checklist li{break-inside:avoid;margin:0 0 10px;padding:11px 13px 11px 40px;background:var(--soft);border-radius:9px;position:relative}.checklist li:before{content:"□";position:absolute;left:14px;top:9px;font-size:18px;color:var(--blue)}
     .source{font-size:12px;color:var(--muted);padding:18px 0 0;border-top:1px solid var(--line);margin-top:42px}.source ul{margin-bottom:0}
     .footer{margin-top:34px;padding:18px 0 0;border-top:1px solid var(--line);color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:24px}.footer strong{color:var(--ink)}
-    @media(max-width:800px){.page{padding:28px 18px 44px}.executive,.guide-grid{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.flow-step:not(:last-child):after{content:"↓";right:50%;top:auto;bottom:-17px}.timeline{padding-left:30px}.timeline:before{left:7px}.event-date{position:static;width:auto;text-align:left;margin-bottom:5px}.event:before{left:-30px}.event-grid{grid-template-columns:1fr}.gate{grid-template-columns:1fr}.gate>*{border-bottom:1px solid var(--line)!important}.gate>*:last-child{border-bottom:0!important}.checklist{columns:1}.footer{display:block}h1{font-size:29px}}
+    @media(max-width:800px){.page{padding:28px 18px 44px}.guide-grid{grid-template-columns:1fr}.metric-grid{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:1fr}.flow-step:not(:last-child):after{content:"↓";right:50%;top:auto;bottom:-17px}.timeline{padding-left:30px}.timeline:before{left:7px}.event-date{position:static;width:auto;text-align:left;margin-bottom:5px}.event:before{left:-30px}.event-grid{grid-template-columns:1fr}.gate{grid-template-columns:1fr}.gate>*{border-bottom:1px solid var(--line)!important}.gate>*:last-child{border-bottom:0!important}.checklist{columns:1}.footer{display:block}h1{font-size:29px}}
     @media print{.page{max-width:none;padding:20px}.event,.guide-card,.callout,.gate{break-inside:avoid}a{color:inherit}}
   </style>
 </head>
@@ -49,19 +49,20 @@
 
   <main class="content">
     <div class="executive">
-      <div class="card verdict">
-        <div class="section-kicker">Executive conclusion</div>
-        <h2>핵심은 <strong>계획 변동에 대한 통제 부족</strong>이다.</h2>
-        <p>7월 중순 확대된 방송계획을 기준으로 40만 개를 발주했으나, 이후 방송효율 하락과 편성 축소가 생산 보류·수량 조정·입고 순연으로 연결되지 않아 초과재고가 발생했다.</p>
-      </div>
-      <div class="card">
-        <h3>숫자로 보는 변화</h3>
+      <div class="card scorecard">
+        <div class="section-kicker">Decision scorecard</div>
+        <h2>숫자로 보는 변화</h2>
         <div class="metric-grid">
           <div class="metric"><b>+123%</b><span>8월 계획수량 증가</span></div>
           <div class="metric"><b>10→23회</b><span>8월 방송횟수</span></div>
           <div class="metric"><b>40만 개</b><span>7/14 신규 발주</span></div>
           <div class="metric"><b>약 10억</b><span>발주금액, VAT 별도</span></div>
         </div>
+      </div>
+      <div class="executive-copy">
+        <div class="section-kicker">Executive conclusion</div>
+        <h2>핵심은 <strong>계획 변동에 대한 통제 부족</strong>이다.</h2>
+        <p>7월 중순 확대된 방송계획을 기준으로 40만 개를 발주했으나, 이후 방송효율 하락과 편성 축소가 생산 보류·수량 조정·입고 순연으로 연결되지 않아 초과재고가 발생했다.</p>
       </div>
     </div>
 
