@@ -13,6 +13,13 @@ GitHub Pages 배포용 정적 HTML 보고서입니다.
 - 작성 규칙: `AGENTS.md`
 - 새 보고서 파일명: `kpi-YYMMDD-review.html`
 
+## Slack 자동 공유
+
+- 공유할 보고서는 `latest-report.json`에 지정합니다.
+- `status`가 `final` 또는 `demo`일 때만 Slack으로 전송됩니다.
+- 초안은 `latest-report.json`을 변경하지 않으므로 자동 공유되지 않습니다.
+- Slack 웹훅은 저장소 Actions Secret `SLACK_WEBHOOK_URL`에만 보관합니다.
+
 새 KPI 보고서는 Google Drive의 최신 회의자료와 회의록, 직전 회차 자료, 저장소의 과거 검토 보고서를 모두 대조해 작성합니다. 글꼴과 정렬은 기존 KPI 보고서 디자인을 유지합니다.
 
 Drive 폴더 주소는 공개 저장소에 올리지 않고 `.codex/kpi-report-source.local.md`에 로컬로 보관합니다.

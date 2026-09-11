@@ -1,0 +1,98 @@
+name: Share KPI report to Slack
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - latest-report.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: share-kpi-report-to-slack
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out report metadata
+        uses: actions/checkout@v4
+
+      - name: Validate metadata and post to Slack
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ -z "${SLACK_WEBHOOK_URL}" ]]; then
+            echo "SLACK_WEBHOOK_URL repository secret is missing."
+            exit 1
+          fi
+
+          report_path="$(jq -r '.report // empty' latest-report.json)"
+          report_title="$(jq -r '.title // empty' latest-report.json)"
+          report_summary="$(jq -r '.summary // empty' latest-report.json)"
+          report_status="$(jq -r '.status // empty' latest-report.json)"
+
+          if [[ ! "${report_path}" =~ ^kpi-[0-9]{6}-review\.html$ ]]; then
+            echo "The report path must match kpi-YYMMDD-review.html."
+            exit 1
+          fi
+
+          if [[ ! -f "${report_path}" || -z "${report_title}" || -z "${report_summary}" ]]; then
+            echo "The report file, title, and summary are required."
+            exit 1
+          fi
+
+          case "${report_status}" in
+            final)
+              status_label="최종 보고서"
+              ;;
+            demo)
+              status_label="데모 테스트"
+              ;;
+            *)
+              echo "The status must be final or demo. Draft reports are not shared."
+              exit 1
+              ;;
+          esac
+
+          owner="${GITHUB_REPOSITORY%%/*}"
+          repository="${GITHUB_REPOSITORY#*/}"
+          report_url="https://${owner}.github.io/${repository}/${report_path}"
+
+          payload="$(jq -n \
+            --arg title "${report_title}" \
+            --arg summary "${report_summary}" \
+            --arg status "${status_label}" \
+            --arg url "${report_url}" \
+            '{
+              text: ("[" + $status + "] " + $title + " — " + $url),
+              blocks: [
+                {
+                  type: "header",
+                  text: {type: "plain_text", text: "KPI 회의 검토 보고서", emoji: true}
+                },
+                {
+                  type: "section",
+                  text: {type: "mrkdwn", text: ("*<" + $url + "|" + $title + ">*\n" + $summary)}
+                },
+                {
+                  type: "context",
+                  elements: [{type: "mrkdwn", text: ("상태: *" + $status + "*") }]
+                }
+              ]
+            }')"
+
+          curl --fail-with-body --silent --show-error \
+            --request POST \
+            --header 'Content-Type: application/json' \
+            --data "${payload}" \
+            "${SLACK_WEBHOOK_URL}"
+
+          echo "Slack notification sent for ${report_path}." >> "${GITHUB_STEP_SUMMARY}"
