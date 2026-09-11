@@ -1,4 +1,4 @@
-name: Share KPI report to Slack
+name: Share management meeting review to Slack
 
 on:
   push:
@@ -38,6 +38,7 @@ jobs:
           report_title="$(jq -r '.title // empty' latest-report.json)"
           report_summary="$(jq -r '.summary // empty' latest-report.json)"
           report_status="$(jq -r '.status // empty' latest-report.json)"
+          not_updated_text="$(jq -r '(.not_updated_teams // []) | map(select(type == "string" and length > 0)) | map("• " + . + " 자료 업데이트 안됨") | join("\n")' latest-report.json)"
 
           if [[ ! "${report_path}" =~ ^kpi-[0-9]{6}-review\.html$ ]]; then
             echo "The report path must match kpi-YYMMDD-review.html."
@@ -71,22 +72,29 @@ jobs:
             --arg summary "${report_summary}" \
             --arg status "${status_label}" \
             --arg url "${report_url}" \
+            --arg not_updated "${not_updated_text}" \
             '{
-              text: ("[" + $status + "] " + $title + " — " + $url),
-              blocks: [
+              text: ("[" + $status + "] " + $title + " — " + $url + (if $not_updated == "" then "" else "\n" + $not_updated end)),
+              blocks: ([
                 {
                   type: "header",
-                  text: {type: "plain_text", text: "KPI 회의 검토 보고서", emoji: true}
+                  text: {type: "plain_text", text: "경영회의자료 검토 보고서", emoji: true}
                 },
                 {
                   type: "section",
                   text: {type: "mrkdwn", text: ("*<" + $url + "|" + $title + ">*\n" + $summary)}
-                },
+                }
+              ] + (if $not_updated == "" then [] else [
+                {
+                  type: "section",
+                  text: {type: "mrkdwn", text: ("*:warning: 자료 업데이트 확인*\n" + $not_updated)}
+                }
+              ] end) + [
                 {
                   type: "context",
                   elements: [{type: "mrkdwn", text: ("상태: *" + $status + "*") }]
                 }
-              ]
+              ])
             }')"
 
           curl --fail-with-body --silent --show-error \
