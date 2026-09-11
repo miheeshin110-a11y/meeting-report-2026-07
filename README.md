@@ -8,6 +8,7 @@ GitHub Pages 배포용 정적 HTML 보고서입니다.
 ## KPI 회의 검토 보고서
 
 - 과거 기준 보고서: `kpi-260902-review.html`, `kpi-260907-review.html`
+- 제품팀 선검토 데모: `kpi-260914-review.html`
 - 새 보고서 템플릿: `kpi-report-template.html`
 - 작성 규칙: `AGENTS.md`
 - 새 보고서 파일명: `kpi-YYMMDD-review.html`
