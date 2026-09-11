@@ -3,5 +3,7 @@
   "title": "9월 14일 경영회의자료 제품팀 선검토 (데모)",
   "summary": "변경된 팀별 양식과 미업데이트 팀 안내를 확인하기 위한 자동 발송 데모입니다.",
   "status": "demo",
-  "not_updated_teams": ["이커머스", "글로벌", "유통"]
+  "not_submitted_teams": ["미디어커머스", "이커머스", "글로벌", "유통사업"],
+  "stale_data_teams": [],
+  "not_updated_teams": []
 }

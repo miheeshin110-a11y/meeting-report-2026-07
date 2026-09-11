@@ -17,6 +17,7 @@ concurrency:
 
 jobs:
   notify:
+    if: github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip-slack]')
     runs-on: ubuntu-latest
     steps:
       - name: Check out report metadata
@@ -38,7 +39,10 @@ jobs:
           report_title="$(jq -r '.title // empty' latest-report.json)"
           report_summary="$(jq -r '.summary // empty' latest-report.json)"
           report_status="$(jq -r '.status // empty' latest-report.json)"
+          not_submitted_text="$(jq -r '(.not_submitted_teams // []) | map(select(type == "string" and length > 0)) | map("• " + . + " 자료 미제출") | join("\n")' latest-report.json)"
+          stale_data_text="$(jq -r '(.stale_data_teams // []) | map(select(type == "string" and length > 0)) | map("• " + . + " 수치 업데이트 안됨") | join("\n")' latest-report.json)"
           not_updated_text="$(jq -r '(.not_updated_teams // []) | map(select(type == "string" and length > 0)) | map("• " + . + " 자료 업데이트 안됨") | join("\n")' latest-report.json)"
+          update_alert_text="$(printf '%s\n%s\n%s\n' "${not_submitted_text}" "${stale_data_text}" "${not_updated_text}" | sed '/^$/d')"
 
           if [[ ! "${report_path}" =~ ^kpi-[0-9]{6}-review\.html$ ]]; then
             echo "The report path must match kpi-YYMMDD-review.html."
@@ -72,9 +76,9 @@ jobs:
             --arg summary "${report_summary}" \
             --arg status "${status_label}" \
             --arg url "${report_url}" \
-            --arg not_updated "${not_updated_text}" \
+            --arg update_alert "${update_alert_text}" \
             '{
-              text: ("[" + $status + "] " + $title + " — " + $url + (if $not_updated == "" then "" else "\n" + $not_updated end)),
+              text: ("[" + $status + "] " + $title + " — " + $url + (if $update_alert == "" then "" else "\n" + $update_alert end)),
               blocks: ([
                 {
                   type: "header",
@@ -84,10 +88,10 @@ jobs:
                   type: "section",
                   text: {type: "mrkdwn", text: ("*<" + $url + "|" + $title + ">*\n" + $summary)}
                 }
-              ] + (if $not_updated == "" then [] else [
+              ] + (if $update_alert == "" then [] else [
                 {
                   type: "section",
-                  text: {type: "mrkdwn", text: ("*:warning: 자료 업데이트 확인*\n" + $not_updated)}
+                  text: {type: "mrkdwn", text: ("*:warning: 자료·수치 업데이트 확인*\n" + $update_alert)}
                 }
               ] end) + [
                 {
