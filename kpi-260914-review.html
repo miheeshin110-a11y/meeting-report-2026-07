@@ -3,20 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>9월 14일 경영회의자료 제품팀 선검토 (데모)</title>
+  <title>9월 14일 경영회의자료 종합 검토 보고서</title>
   <style>
     * { box-sizing: border-box; }
     html { background: #ffffff; }
     body {
-      margin: 0;
-      color: #1f2328;
-      background: #ffffff;
+      margin: 0; color: #1f2328; background: #ffffff;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", Arial, sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      text-align: left;
-      word-break: keep-all;
-      overflow-wrap: break-word;
+      font-size: 16px; line-height: 1.6; text-align: left;
+      word-break: keep-all; overflow-wrap: break-word;
     }
     main { width: min(1100px, calc(100% - 48px)); margin: 0 auto; padding: 36px 0 72px; }
     h1, h2, h3 { color: #1f2328; font-weight: 600; line-height: 1.3; text-align: left; }
@@ -55,152 +50,312 @@
 </head>
 <body>
   <main>
-    <h1>9월 14일 경영회의자료 제품팀 선검토 (데모)</h1>
+    <h1>9월 14일 경영회의자료 종합 검토 보고서</h1>
 
     <ul class="meta">
-      <li>대상: <code>종합_KPI회의_DAY_260914</code> 제품팀 4~6페이지</li>
-      <li>제출 대상: 제품팀, 미디어커머스, 이커머스, 글로벌, 유통사업</li>
-      <li>참고 회의록: <code>종합_경영회의회의록_DAY_260907</code>, <code>종합_경영회의회의록_DAY_260904</code></li>
-      <li>비교 자료: <code>종합_KPI회의_DAY_260907</code> 제품팀 5~7페이지</li>
-      <li>과거 검토 보고서: <code>kpi-260902-review.html</code>, <code>kpi-260907-review.html</code></li>
-      <li>검토 기준일: 2026-09-11</li>
-      <li>검토 범위: 현재 업로드된 제품팀 자료에 한정한 데모 선검토</li>
+      <li>대상: <code>종합_KPI회의_DAY_260914</code> 42페이지 전체</li>
+      <li>회의일: 2026-09-14 (자료 표지 기준)</li>
+      <li>검토 기준일: 2026-09-12</li>
+      <li>직전 회의록: <code>종합_경영회의회의록_DAY_260907</code>, <code>종합_경영회의회의록_DAY_260904</code></li>
+      <li>비교 자료: <code>종합_KPI회의_DAY_260907</code>, <code>종합_KPI회의_DAY_260902</code></li>
+      <li>과거 보고서: <code>kpi-260907-review.html</code>, <code>kpi-260902-review.html</code></li>
     </ul>
 
-    <blockquote><p><strong>핵심 결론:</strong> 제품팀 자료는 직전 회차보다 주차별 진행상태와 제품 스펙이 구체화됐고, 아퍼핏·드라코벨의 품목제조보고 목표도 앞당겨졌습니다. 다만 9월 7일 회의록이 요구한 <strong>제품명·패키지 사양 확정 → 디자인·상세페이지·부자재 발주 전환</strong> 가운데 상세페이지, 담당자, 실제 발주 증빙과 예상 매출·손익은 자료에서 확인되지 않아 전체적으로 <strong>일부 반영</strong>으로 판단합니다.</p></blockquote>
+    <blockquote><p><strong>핵심 결론:</strong> 이번 회차에는 제품팀·미디어커머스·이커머스·글로벌·유통사업 5개 팀 자료가 모두 제출됐고, 직전 회의에서 요구한 팀별 구조 보강도 전반적으로 확인됩니다. 다만 회의 전 반드시 고쳐야 할 항목은 <strong>이커머스 SA 요약과 상세 원장 수치 불일치, 글로벌 손익 달성률 계산 오류 가능성, 유통사업 누적 목표와 달성률 기준 혼용, 미디어커머스 2027년 1분기 PPL 편성 수 합계 불일치</strong>입니다. 이번 회차에서 전체 지표가 직전과 그대로 반복된 팀은 확인되지 않았습니다.</p></blockquote>
 
-    <h2>1. 자료 업데이트 현황</h2>
-
+    <h2>1. 전체 팀 자료 업데이트 현황</h2>
     <div class="table-wrap">
       <table class="team-check">
-        <thead><tr><th>팀</th><th>최신 자료</th><th>데이터 기준일</th><th>제출 상태</th><th>수치 갱신 판정</th><th>확인사항</th></tr></thead>
+        <thead><tr><th>팀</th><th>현재 자료</th><th>비교 기준</th><th>제출 상태</th><th>수치 갱신 판정</th><th>핵심 확인사항</th></tr></thead>
         <tbody>
-          <tr><td>제품팀</td><td>9/14 자료 4~6페이지</td><td>자료에서 확인되지 않음</td><td class="status">제출</td><td class="status">정량 KPI 없음</td><td>출시 일정·주차별 진행·제품 스펙 내용이 변경됨</td></tr>
-          <tr><td>미디어커머스</td><td>해당 팀 본문 미확인</td><td>자료에서 확인되지 않음</td><td class="status">자료 미제출</td><td class="status">검증 불가</td><td>이번 회차 실적 평가에서 제외</td></tr>
-          <tr><td>이커머스</td><td>9/14 자료 7페이지</td><td>자료에서 확인되지 않음</td><td class="status">자료 미제출</td><td class="status">검증 불가</td><td>구분 표지만 확인되어 이번 회차 실적 평가에서 제외</td></tr>
-          <tr><td>글로벌</td><td>9/14 자료 8페이지</td><td>자료에서 확인되지 않음</td><td class="status">자료 미제출</td><td class="status">검증 불가</td><td>구분 표지만 확인되어 이번 회차 실적 평가에서 제외</td></tr>
-          <tr><td>유통사업</td><td>9/14 자료 9페이지</td><td>자료에서 확인되지 않음</td><td class="status">자료 미제출</td><td class="status">검증 불가</td><td>구분 표지만 확인되어 이번 회차 실적 평가에서 제외</td></tr>
+          <tr><td>미디어커머스</td><td>7~17페이지</td><td>9/7 본문 미제출, 9/2 자료</td><td class="status">제출</td><td class="status">업데이트</td><td>9/1~10 방송 결과, 편성 가이드, 가격·정액비, 2027년 1분기 방향 추가</td></tr>
+          <tr><td>제품팀</td><td>19~21페이지</td><td>9/7 5~7페이지, 9/2 24~26페이지</td><td class="status">제출</td><td class="status">업데이트</td><td>출시 일정·제품 스펙 보강. 정량 매출·손익 KPI는 자료에서 확인되지 않음</td></tr>
+          <tr><td>이커머스</td><td>23~36페이지</td><td>9/7 9~34페이지, 9/2 28~42페이지</td><td class="status">제출</td><td class="status">업데이트</td><td>9/1~11 MTD와 원장 기준일 갱신. 일부 요약·상세 수치 불일치</td></tr>
+          <tr><td>글로벌</td><td>38페이지</td><td>9/7 40페이지, 9/2 44페이지</td><td class="status">제출</td><td class="status">부분 업데이트</td><td>매출·운영비·광고비 갱신, 마진은 3회차 동일하여 산식 확인 필요</td></tr>
+          <tr><td>유통사업</td><td>40~42페이지</td><td>9/7 42~45페이지, 9/2 47~49페이지</td><td class="status">제출</td><td class="status">업데이트</td><td>7~9월 10일 누적과 9~12월 로드맵 추가. 목표 기준 혼용</td></tr>
         </tbody>
       </table>
     </div>
 
-    <h2>2. 제품팀</h2>
-
-    <h3>2-1. 수치 업데이트 및 주요 변화</h3>
-
-    <p>제품팀 자료는 공헌이익률·CTR·CVR처럼 회차별로 비교할 정량 KPI 표가 없어 일정과 상태 변경을 중심으로 검토했습니다. 정량 KPI가 포함되는 팀은 전전·직전·현재 3개 시점을 나란히 대조합니다.</p>
-
+    <h2>2. 전사 KPI 및 데이터 정합성</h2>
+    <h3>2-1. 3개 회차 핵심 KPI 비교</h3>
+    <p>9/2·9/7 자료는 8월 자료, 9/14 자료는 9/1~10 자료이므로 아래 변화는 동일 기간의 연속 추세가 아니라 <strong>데이터 갱신 여부와 집계 정의 확인용</strong>입니다. 9/14 자료는 매출·AOV·공헌이익은 전체 채널, CTR·CVR은 9월 네이버 SA 기준이라고 명시했습니다.</p>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>항목</th><th>9/7 자료</th><th>9/14 자료</th><th>판정</th><th>확인사항</th></tr></thead>
+        <thead><tr><th>제품</th><th>지표</th><th>9/2</th><th>9/7</th><th>9/14</th><th>판정</th></tr></thead>
         <tbody>
-          <tr><td>제품팀 자료 구성</td><td>출시 일정, 주차별 진행, Due Date 중심</td><td>출시 일정, 3주 단위 세부 진행, 제품별 스펙·관능 특징 추가</td><td class="status">보강</td><td>제품 스펙표에 확정 상태·승인일·버전 정보를 추가하면 변경 관리가 가능함</td></tr>
-          <tr><td>아퍼핏 품목제조보고</td><td class="number">~10/5</td><td class="number">~9/30</td><td class="status">앞당김</td><td>영양성분검사와 액상 용기 확정이 선행조건이므로 일정 여유와 지연 대응 기준 확인 필요</td></tr>
-          <tr><td>드라코벨 품목제조보고</td><td class="number">~10/5</td><td class="number">~9/30</td><td class="status">앞당김</td><td>정제 샘플 테스트와 액상 최종 맛·디자인 확정이 생산 발주 일정과 연결되는지 확인 필요</td></tr>
-          <tr><td>코큐텐</td><td>사용기한 설정 실험, 기능성 사전광고심의 진행</td><td>기능성 광고심의 통과로 표시되고 사용기한 설정 실험은 10월 말 결과 예상</td><td class="status">부분 진척</td><td>4페이지에는 심의가 진행 단계로 남아 있어 5페이지의 통과 표기와 상태 통일 필요</td></tr>
-          <tr><td>효소 출시 목표</td><td class="number">11월</td><td class="number">11월</td><td class="status">유지</td><td>패키지 부자재 발주와 품목제조보고 진행 증빙이 필요</td></tr>
-          <tr><td>아퍼핏·드라코벨·코큐텐 출시 목표</td><td class="number">12월</td><td class="number">12월</td><td class="status">유지</td><td>출시 후 목표 채널·매출·공헌이익 계획은 확인되지 않음</td></tr>
+          <tr><td>알파CD</td><td>공헌이익률</td><td class="number">62.3%</td><td class="number">62.1%</td><td class="number">60.2%</td><td>갱신, 9/7 대비 -1.9%p</td></tr>
+          <tr><td></td><td>CTR / CVR</td><td class="number">3.91% / 3.14%</td><td class="number">3.91% / 3.14%</td><td class="number">1.38% / 11.45%</td><td>갱신, 기간·범위 변경</td></tr>
+          <tr><td>파라다이스그레인</td><td>공헌이익률</td><td class="number">75.3%</td><td class="number">46.5%</td><td class="number">60.8%</td><td>갱신, 9/7 대비 +14.3%p</td></tr>
+          <tr><td></td><td>CTR / CVR</td><td class="number">3.51% / 2.68%</td><td class="number">3.51% / 2.68%</td><td class="number">0.59% / 2.97%</td><td>갱신, CTR 기준 3.5% 미달</td></tr>
+          <tr><td>프리바이오틱스</td><td>공헌이익률</td><td class="number">54.5%</td><td class="number">32.6%</td><td class="number">56.4%</td><td>갱신, 9/7 대비 +23.8%p</td></tr>
+          <tr><td></td><td>CTR / CVR</td><td class="number">4.21% / 4.85%</td><td class="number">2.41% / 4.85%</td><td class="number">1.05% / 14.29%</td><td>갱신, 기간·범위 변경</td></tr>
+          <tr><td>그린아세로라</td><td>공헌이익률</td><td class="number">58.6%</td><td class="number">44.6%</td><td class="number">69.7%</td><td>갱신, 9/7 대비 +25.1%p</td></tr>
+          <tr><td></td><td>CTR / CVR</td><td class="number">4.77% / 3.53%</td><td class="number">4.77% / 3.53%</td><td class="number">3.36% / 9.53%</td><td>갱신, CTR 기준 3.5% 소폭 미달</td></tr>
         </tbody>
       </table>
     </div>
 
-    <p>직전 회차에서 계획 수준이었던 과제가 이번 자료에서는 샘플, 영양성분검사, 용기 색상, 패키지 생산 발주 등 실행 단위로 나뉜 점은 긍정적입니다. 반면 계획일을 앞당긴 근거와 선행조건 완료 여부가 함께 제시되지 않아, 일정 단축이 실제 가능해졌는지는 추가 확인이 필요합니다.</p>
-
-    <h3>2-2. 9월 7일 회의 요청사항 반영 여부</h3>
-
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>회의록 요청</th><th>반영 상태</th><th>확인 내용</th><th>다음 보완</th></tr></thead>
-        <tbody>
-          <tr><td>제품명 확정</td><td class="status">확인 필요</td><td>아퍼핏·드라코벨·코큐텐·효소의 프로젝트명과 제형은 보이지만 최종 제품명 확정 여부·승인일은 표시되지 않음</td><td>최종 제품명, 승인자, 승인일, 변경 이력을 한 줄로 표시</td></tr>
-          <tr><td>패키지 사양 확정</td><td class="status">일부 반영</td><td>5페이지에 디자인·용기 색상·맛 확정 과제가 있고 6페이지에 제품 스펙과 주요 배합이 추가됨</td><td>각 제형별 사양을 <code>검토 중/확정</code>으로 구분하고 확정일·버전을 표시</td></tr>
-          <tr><td>패키지 디자인 단계 전환</td><td class="status">반영</td><td>아퍼핏·드라코벨·효소는 패키지 디자인 진행 중으로 표시되고 주차별 확정 일정이 제시됨</td><td>디자인 확정 후 생산 발주까지 담당자와 실제 완료일을 연결</td></tr>
-          <tr><td>상세페이지 단계 전환</td><td class="status">미반영</td><td>현재 제품팀 4~6페이지에서 웹 상세페이지 기획·촬영·제작·완료 일정을 확인할 수 없음</td><td>제품별 상세페이지 시작일, 완료일, 담당팀, 핵심 메시지를 추가</td></tr>
-          <tr><td>부자재 발주 단계 전환</td><td class="status">일부 반영</td><td>4페이지에 패키지 부자재 발주가 9월 핵심 일정으로 표시됨</td><td>발주 예정과 발주 완료를 분리하고 발주일·업체·입고 예정일을 표시</td></tr>
-          <tr><td>계획 대비 결과와 예상 손익</td><td class="status">미반영</td><td>일정과 스펙은 보강됐지만 제품별 예상 매출, 원가율, 초도 수량, 목표 공헌이익, 목표 채널을 확인할 수 없음</td><td>출시 일정표 옆에 목표 채널·초도 수량·매출·공헌이익을 연결</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h3>2-3. 제품별 진행상태 및 출시 점검</h3>
-
-    <div class="table-wrap">
-      <table class="team-check">
-        <thead><tr><th>제품</th><th>현재 확인된 진척</th><th>출시 전 핵심 확인사항</th></tr></thead>
-        <tbody>
-          <tr><td>아퍼핏</td><td>분말·액상 제형을 병행하고 패키지 디자인, 액상 기획, 영양성분검사와 용기 색상 확정을 진행 중</td><td>두 제형의 품목제조보고·패키지 발주 선행조건, 액상 용기 확정일, 상세페이지와 12월 출시 준비 연결</td></tr>
-          <tr><td>드라코벨</td><td>분말·정제·액상 3종 출시 방향을 유지하고 정제 샘플 테스트와 액상 맛·디자인 확정을 진행 중</td><td>제형별 최종 사양 승인, 9/30 생산 발주 가능 여부, 스틱젤리·구미 샘플의 후속 일정</td></tr>
-          <tr><td>코큐텐</td><td>기능성 광고심의 통과가 표시됐고 사용기한 설정 실험을 진행 중</td><td>4페이지와 5페이지의 심의 상태 통일, 10월 말 실험 결과가 12월 출시 일정에 미치는 영향</td></tr>
-          <tr><td>효소</td><td>패키지 디자인과 영양성분검사를 진행 중이며 11월 출시 목표를 유지</td><td>다른 제품보다 출시가 한 달 빠르므로 패키지 입고·생산 발주·상세페이지 일정의 실제 완료일 관리</td></tr>
-          <tr><td>원데이팩</td><td>9/14 내함 단가 견적 수령 예정이며 내함 재질 변경 가능성이 표시됨</td><td>기존안 대비 단가 차이, 재질 변경의 품질·납기 영향, 선택안과 결정 기한 필요</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h3>2-4. KPI·일정·수치·표기 점검</h3>
-
+    <h3>2-2. 전사 월간 실적 연결 점검</h3>
     <div class="table-wrap">
       <table class="page-check">
-        <thead><tr><th>페이지</th><th>확인 내용</th><th>판정</th><th>보완 제안</th></tr></thead>
+        <thead><tr><th>페이지</th><th>확인 내용</th><th>판정</th><th>회의 전 보완</th></tr></thead>
         <tbody>
-          <tr><td>4·5</td><td>코큐텐 기능성 광고심의가 4페이지에는 <code>진행</code>, 5페이지에는 <code>통과</code>로 표시됨</td><td class="status">표기 불일치</td><td>최신 상태가 통과라면 4페이지도 완료로 수정하고 통과일·심의번호를 표시</td></tr>
-          <tr><td>4·5</td><td>4페이지는 9월 핵심 일정으로 패키지 부자재 발주를 제시하지만, 5페이지 세부현황에는 샘플·검사·디자인 진행이 중심이며 실제 발주일이 분리되지 않음</td><td class="status">범위 확인</td><td><code>발주 예정/발주 완료/입고 예정</code>을 구분하고 세부현황과 요약 일정을 같은 용어로 연결</td></tr>
-          <tr><td>4·5</td><td>아퍼핏·드라코벨 품목제조보고 목표가 9/7 자료의 10/5에서 9/14 자료의 9/30으로 변경됨</td><td class="status">일정 변경</td><td>단축 사유와 선행조건 완료 여부를 표시해 단순 날짜 변경과 실제 진척을 구분</td></tr>
-          <tr><td>5</td><td>모든 주요 행의 상태가 <code>진행중</code>으로 표시돼 완료·지연·대기 상태를 한눈에 구분하기 어려움</td><td class="status">보완 필요</td><td>계획일, 실제 완료일, 지연일수, 지연사유를 별도 열로 관리</td></tr>
-          <tr><td>5</td><td>드라코벨 스틱젤리·구미는 샘플 요청과 테스트만 있고 이후 확정·생산·출시 일정이 비어 있음</td><td class="status">일정 미연결</td><td>테스트 종료 후 Go/No-Go 결정일과 후속 생산 일정을 추가</td></tr>
-          <tr><td>6</td><td>제품 스펙·주요 배합·플레이버·관능 특징이 새로 정리됐지만 확정 상태와 문서 버전이 없음</td><td class="status">신규 보강</td><td>사양별 확정 여부, 변경일, 승인자, 원료·표시 검토 상태를 추가</td></tr>
+          <tr><td>3</td><td>9/1~10 총매출 23.21억원, 순매출 17.87억원, 잠정 공헌이익 4.68억원, 판관비 반영 후 최종 공헌이익 3.38억원</td><td class="status">산식 연결</td><td>팀별 매출 카드 합계 17.9억원과 총매출 23.21억원 사이 약 5.31억원의 연결 항목 표시</td></tr>
+          <tr><td>3·23</td><td>이커머스 매출은 3페이지 약 2.5억원(9/1~10), 23페이지 2.62억원(9/1~11)</td><td class="status">기간 차이</td><td>각 장표 제목에 기준일을 크게 표시</td></tr>
+          <tr><td>3·38</td><td>글로벌 매출 카드는 0.0억원으로 표시되지만 38페이지 실제 총판매가액은 60,533,974원</td><td class="status">범위 확인</td><td>전사 카드와 글로벌 원장의 매출 인식 기준·기준일 명시</td></tr>
+          <tr><td>2</td><td>전사 표지는 9/14 회의인데 월간 실적 구분 표지는 진행일이 9/4로 남아 있음</td><td class="status">표기 불일치</td><td>자료 작성 기준일과 회의일을 분리하거나 9/14로 통일</td></tr>
         </tbody>
       </table>
     </div>
 
-    <h3>2-5. 반복 이슈와 신규 이슈</h3>
+    <h2>3. 미디어커머스</h2>
+    <h3>3-1. 주요 변화와 수치 업데이트</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>항목</th><th>현재 수치·내용</th><th>판정</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr><td>이익 상위 5편</td><td class="number">합계 163,030,577원 / 회차당 평균 약 3,261만원</td><td class="status">신규 분석</td><td>7~9페이지</td></tr>
+          <tr><td>손실 하위 5편</td><td class="number">합계 -99,365,090원 / 회차당 평균 약 -1,987만원</td><td class="status">신규 분석</td><td>7·10~11페이지</td></tr>
+          <tr><td>편성 패턴</td><td>홈앤쇼핑, JTBC 평일 20시, TV조선 주말 10시 우선 / NS·현대, 평일 06시, TV조선 명의보감 회피</td><td class="status">반영</td><td>9·11페이지</td></tr>
+          <tr><td>아이템 손익</td><td class="number">아세로라 7회 -28,693,441원 / 파라다이스 19회 +135,695,093원</td><td class="status">갱신</td><td>14페이지</td></tr>
+          <tr><td>2027년 1분기</td><td class="number">PPL 월 14회 → 월 40회 목표</td><td class="status">방향 제시</td><td>17페이지</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>9/7 종합자료에는 미디어커머스 본문이 없었으므로 전전→직전→현재의 연속 수치 비교는 불가능합니다. 이번 회차에서는 9/1~10의 편성 결과와 가이드가 새로 제시돼 자료 업데이트는 명확히 확인됩니다.</p>
 
-    <p><strong>이전 보고서부터 반복된 이슈</strong></p>
-    <ul>
-      <li><strong>예상 매출·손익 미연결</strong> 9월 2일 보고서의 <code>제품별 월 손익·목표 채널</code>과 9월 7일 보고서의 <code>출시 후 예상 매출·손익</code> 보완 요청이 이번 자료에도 남아 있습니다.</li>
-      <li><strong>담당자·실제 완료일 부재</strong> Due Date와 주차별 계획은 있으나 과제별 담당자, 실제 완료일, 지연 사유가 없어 다음 회의에서 이행 여부를 닫기 어렵습니다.</li>
-      <li><strong>출시 이후 성과 기준 부재</strong> 11~12월 출시 목표는 유지되지만 초도 수량, 목표 채널, 매출, 공헌이익, 리뷰·VOC 등 출시 후 KPI가 연결되지 않았습니다.</li>
-    </ul>
+    <h3>3-2. 직전 회의 요청사항 반영 여부</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>요청사항</th><th>반영 상태</th><th>확인 내용</th><th>남은 과제</th></tr></thead>
+        <tbody>
+          <tr><td>효율 부진 PPL을 검증된 스페셜·재방으로 변경</td><td class="status">반영</td><td>GOOD/BAD 편성과 회피 채널·시간대·PGM 분리</td><td>변경 전후 주간 손익을 같은 표에 누적</td></tr>
+          <tr><td>PGM 및 채널×시간대 정액비 가이드</td><td class="status">반영</td><td>PPL·홈쇼핑 가이드와 채널별 정액비 표 추가</td><td>정액비 상한 승인자·시행일·예외 승인 절차 표시</td></tr>
+          <tr><td>20시 등 우수 시간대 확대</td><td class="status">반영</td><td>JTBC 평일 20시를 다음 운영안에 포함</td><td>확보 슬롯 수와 예상 손익 제시</td></tr>
+          <tr><td>홍화씨유 가격·구성과 수익모델</td><td class="status">일부 반영</td><td>8박스·12박스 가격과 방송 혜택, 원가율 19.8% 제시</td><td>수수료·정액비·카드비 반영 최종 회차 손익 연결</td></tr>
+          <tr><td>2027년 1분기 편성·발주·예산</td><td class="status">일부 반영</td><td>월 편성 수와 아이템 비중 제시</td><td>발주량·재고·월별 예산·손익은 확인되지 않음</td></tr>
+          <tr><td>현대 잔여편성 후 최종 손익</td><td class="status">확인 필요</td><td>현대가 회피 채널로 분류됐으나 최종 손익은 별도 확인되지 않음</td><td>현대 편성 결과와 재협의 조건 추가</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-    <p><strong>이번 회차에서 새로 확인된 이슈</strong></p>
-    <ul>
-      <li><strong>요약과 상세의 코큐텐 심의 상태 불일치</strong> 진행과 통과 중 하나로 통일해야 합니다.</li>
-      <li><strong>일정 단축 근거 부재</strong> 아퍼핏·드라코벨 품목제조보고 목표가 앞당겨졌으나 변경 사유와 선행조건 완료 여부가 표시되지 않았습니다.</li>
-      <li><strong>원데이팩 의사결정 정보 부족</strong> 내함 재질 변경 가능성은 제시됐지만 비용·품질·납기 비교와 결정 기한이 없습니다.</li>
-    </ul>
+    <h3>3-3. 점검 및 우선 조치</h3>
+    <div class="table-wrap">
+      <table class="page-check">
+        <thead><tr><th>페이지</th><th>점검 내용</th><th>우선 조치</th></tr></thead>
+        <tbody>
+          <tr><td>7</td><td><code>9월 2차</code>, <code>9월 1차 방송진행 결과</code>, 각주 <code>9월 1주차</code>가 함께 표시됨</td><td>보고 주차 명칭 통일</td></tr>
+          <tr><td>14</td><td>아세로라 순이익은 -28,693,441원인데 원가 미반영 이익 +28,350,809원과 이후 편성 유지 조건이 함께 제시됨</td><td>편성 판단을 원가 반영 후 손익으로 통일</td></tr>
+          <tr><td>15</td><td>카드 5% 무이자 12개월 비용을 <code>월 1만원대</code>로 표현했으나 하단 계산은 19,663원×12</td><td>월 비용·총비용·부담 주체 분리</td></tr>
+          <tr><td>17</td><td>월 40회 목표인데 세부 편성은 본방 4회+JTBC 재방 30회+TV조선 스페셜 10회로 합계 44회</td><td>목표와 세부 합계를 40회 또는 44회로 통일</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-    <h3>2-6. 9월 14일 회의 전 우선 조치와 의사결정 요청</h3>
+    <h2>4. 제품팀</h2>
+    <h3>4-1. 주요 변화와 수치 업데이트</h3>
+    <p>제품팀은 정량 매출·손익 KPI가 없어 3개 회차의 일정과 상태를 비교했습니다. 9/2→9/7→9/14로 제품별 주차 일정과 스펙이 보강됐고, 아퍼핏·드라코벨 품목제조보고 목표는 9/7의 10/5에서 9/14의 9/30으로 앞당겨졌습니다.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>항목</th><th>9/7</th><th>9/14</th><th>판정</th><th>확인사항</th></tr></thead>
+        <tbody>
+          <tr><td>아퍼핏 품목제조보고</td><td class="number">~10/5</td><td class="number">~9/30</td><td class="status">앞당김</td><td>영양성분검사·액상 용기 확정 등 선행조건 확인</td></tr>
+          <tr><td>드라코벨 품목제조보고</td><td class="number">~10/5</td><td class="number">~9/30</td><td class="status">앞당김</td><td>정제 샘플·액상 맛·디자인 확정과 발주 연결 확인</td></tr>
+          <tr><td>코큐텐</td><td>기능성 사전광고심의 진행</td><td>광고심의 통과, 사용기한 실험 10월 말 결과 예상</td><td class="status">부분 진척</td><td>19페이지 진행, 20페이지 통과 표기 통일</td></tr>
+          <tr><td>출시 목표</td><td>효소 11월, 주요 제품 12월</td><td>동일</td><td class="status">유지</td><td>출시 후 목표 채널·매출·공헌이익 필요</td></tr>
+        </tbody>
+      </table>
+    </div>
 
+    <h3>4-2. 직전 회의 요청사항 반영 여부</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>요청사항</th><th>반영 상태</th><th>확인 내용</th><th>남은 과제</th></tr></thead>
+        <tbody>
+          <tr><td>제품명·패키지 사양 확정</td><td class="status">일부 반영</td><td>제형·배합·플레이버·관능 특징과 확정 예정 주차 추가</td><td>최종 제품명, 사양 버전, 승인일·승인자 표시</td></tr>
+          <tr><td>디자인 단계 전환</td><td class="status">반영</td><td>아퍼핏·드라코벨·효소 패키지 디자인 일정 확인</td><td>실제 완료일과 발주 증빙 연결</td></tr>
+          <tr><td>상세페이지 단계 전환</td><td class="status">미반영</td><td>웹 상세 기획·촬영·제작·완료 일정이 확인되지 않음</td><td>제품별 상세페이지 일정과 담당팀 추가</td></tr>
+          <tr><td>부자재 발주 단계 전환</td><td class="status">일부 반영</td><td>9월 핵심 일정에 포장 부자재 발주 표시</td><td>발주 예정·완료·입고 예정 분리</td></tr>
+          <tr><td>예상 매출·손익 연결</td><td class="status">미반영</td><td>초도 수량·원가율·목표 채널·공헌이익이 없음</td><td>제품별 사업성 한 줄 추가</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>4-3. 점검 및 우선 조치</h3>
     <ol>
-      <li><strong>코큐텐 심의 상태 통일</strong> 4·5페이지를 최신 상태로 맞추고 통과일과 근거를 표시합니다.</li>
-      <li><strong>9/30 발주·품목제조보고 가능성 확인</strong> 영양성분검사, 샘플 테스트, 용기·디자인 확정 등 선행조건별 완료 여부를 붙입니다.</li>
-      <li><strong>상세페이지 일정 추가</strong> 제품별 기획·촬영·제작·검수 완료일과 담당팀을 출시 일정에 연결합니다.</li>
-      <li><strong>발주 증빙과 실제 완료일 관리</strong> 예정일만 두지 말고 발주일, 업체, 수량, 입고 예정일, 지연 사유를 구분합니다.</li>
-      <li><strong>제품별 사업성 한 줄 추가</strong> 목표 채널, 초도 수량, 예상 매출, 원가율, 목표 공헌이익을 같은 표에 연결합니다.</li>
-      <li><strong>원데이팩 선택안 제시</strong> 내함 재질별 단가·납기·품질 차이와 권고안을 정리해 의사결정 요청으로 올립니다.</li>
+      <li><strong>코큐텐 심의 상태 통일:</strong> 19·20페이지를 최신 상태로 맞추고 통과일과 근거를 표시합니다.</li>
+      <li><strong>9/30 일정 현실성 확인:</strong> 검사·샘플·용기·디자인 선행조건별 완료 여부와 지연 시 재설정일을 붙입니다.</li>
+      <li><strong>상세페이지와 판매계획 연결:</strong> 출시 전 제작 일정, 목표 채널, 초도 수량, 예상 매출·공헌이익을 추가합니다.</li>
+      <li><strong>원데이팩 선택안:</strong> 내함 재질별 단가·납기·품질 차이와 결정 기한을 제시합니다.</li>
     </ol>
 
-    <h2>3. 자료 업데이트 안 된 팀</h2>
-    <ul>
-      <li><strong>미디어커머스:</strong> 해당 팀 본문을 확인할 수 없어 최신 실적·계획을 평가하지 않았습니다.</li>
-      <li><strong>이커머스:</strong> 7페이지에서 구분 표지만 확인되어 최신 실적·계획을 평가하지 않았습니다.</li>
-      <li><strong>글로벌:</strong> 8페이지에서 구분 표지만 확인되어 최신 실적·계획을 평가하지 않았습니다.</li>
-      <li><strong>유통사업:</strong> 9페이지에서 구분 표지만 확인되어 최신 실적·계획을 평가하지 않았습니다.</li>
-    </ul>
+    <h2>5. 이커머스</h2>
+    <h3>5-1. 주요 변화와 수치 업데이트</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>지표</th><th>8월 회의 기준</th><th>9월 1~11일 MTD</th><th>현재 판단</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr><td>온라인 매출</td><td>직전 회의록에 7~8월 매출 약 23% 감소 언급</td><td class="number">2.62억원, 8월 동기 대비 +12.6%</td><td class="status">회복</td><td>23·25페이지</td></tr>
+          <tr><td>잠정 공헌이익</td><td>동일 기준 3시점 수치 확인 불가</td><td class="number">1.67억원, 공헌율 63.8%</td><td class="status">갱신</td><td>23·25페이지</td></tr>
+          <tr><td>실질 공헌이익</td><td class="number">8월 약 2.7억원 / 목표 3.2억원</td><td class="number">1.20억원 / 월 환산 3.28억원</td><td class="status">월 목표 3.5억원 미달 전망</td><td>9/7 회의록, 23·34페이지</td></tr>
+          <tr><td>AOV</td><td class="number">8월 동기 8.1만원</td><td class="number">9.2만원, +14.5%</td><td class="status">개선</td><td>23·25페이지</td></tr>
+          <tr><td>SA</td><td>9/7 회의에서 효율 중심 축소·애드부스트 증액 지시</td><td class="number">CTR 1.08%, CVR 3.69%, CPA 4.92만원, 구매 ROAS 128.1%</td><td class="status">업데이트</td><td>30페이지 요약 기준</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-    <h2>4. 팀 간 연결 이슈와 경영진 의사결정 요청</h2>
+    <h3>5-2. 직전 회의 요청사항 반영 여부</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>요청사항</th><th>반영 상태</th><th>확인 내용</th><th>남은 과제</th></tr></thead>
+        <tbody>
+          <tr><td>Commerce·Growth 구분</td><td class="status">반영</td><td>Commerce, Growth, Paid, Promotion 구조로 재편</td><td>고정 레이아웃 유지</td></tr>
+          <tr><td>신규·재구매 고객 분리</td><td class="status">미반영</td><td>34페이지에 추가 예정으로만 표시</td><td>네이버 ID 기준 실제 수와 비중 반영</td></tr>
+          <tr><td>프로젝트 기안 대비 달성률·미달 원인</td><td class="status">일부 반영</td><td>채널·제품·SA 성과와 해석은 추가됐으나 기안 목표 대비 표는 없음</td><td>계획액·실적·달성률·차이 원인 추가</td></tr>
+          <tr><td>광고비·손익 원데이터 정합성</td><td class="status">보완 필요</td><td>요약·상세에서 SA 비용·CPA·ROAS가 서로 다름</td><td>한 원장과 동일 집계시각으로 재생성</td></tr>
+          <tr><td>행사별 P&amp;L</td><td class="status">미반영</td><td>33페이지 다수 행사가 <code>취합 중</code>, 34페이지 최종 공헌이익 부분 입력</td><td>행사별 매출·비용·공헌이익 확정</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>5-3. KPI·수치·표기 점검</h3>
+    <div class="table-wrap">
+      <table class="page-check">
+        <thead><tr><th>페이지</th><th>확인 내용</th><th>판정</th><th>회의 전 보완</th></tr></thead>
+        <tbody>
+          <tr><td>26·29</td><td>쿠팡 AOV가 26페이지 52.6만원, 29페이지 5.6만원으로 10배 차이</td><td class="status">수치 불일치</td><td>주문 건수와 매출 원장으로 재계산</td></tr>
+          <tr><td>30·35</td><td>SA 비용 3,814만원과 39,353,993원, CPA 4.92만원과 50,779원, 구매 ROAS 128.1%와 124.1%로 차이</td><td class="status">원장 불일치</td><td>환불·브랜드·부가세·귀속 채널 포함 범위 통일</td></tr>
+          <tr><td>32</td><td>총 광고·마케팅비 4,709만원, SA 집행비 3,468만원, SA 원시파일 2,418만원이 함께 제시됨</td><td class="status">범위 확인</td><td>회계 귀속·매체 원장·계정 보고서 조정표 추가</td></tr>
+          <tr><td>31·32</td><td>제품별 광고비 합계와 총 광고비가 연결되지 않고 <code>구분없음</code> 912만원이 존재</td><td class="status">배부 미완료</td><td>미배부 비용의 캠페인·제품 귀속 확정</td></tr>
+          <tr><td>25</td><td>9/8~11은 4일 부분 구간인데 9/1~7 대비 WoW -70.6%로 단순 비교</td><td class="status">비교 한계</td><td>일평균 또는 같은 요일·일수 기준 비교</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>5-4. 우선 조치와 의사결정 요청</h3>
     <ol>
-      <li><strong>출시 후 판매계획 연결:</strong> 제품팀의 11~12월 출시 일정이 미디어커머스·이커머스·글로벌·유통사업의 채널별 판매계획과 연결되는지 다음 종합본에서 확인해야 합니다.</li>
-      <li><strong>팀별 자료 제출 여부 확인:</strong> 미제출 4개 팀의 자료가 보강된 뒤 매출·광고·재고·유통 계획과 제품 출시 수량을 교차검증해야 합니다.</li>
+      <li><strong>SA 정본 확정:</strong> 30·35페이지를 같은 원장·기준일로 맞춘 뒤 광고비 증감 결정을 합니다.</li>
+      <li><strong>실질공헌 3.5억원 갭:</strong> 월 환산 3.28억원 기준 약 0.22억원 부족분을 채널·상품·광고 액션으로 분해합니다.</li>
+      <li><strong>저효율 재설계:</strong> 멀티비타민·파라다이스·알파CD 쇼핑 캠페인의 축소·유지 기준을 구매 ROAS와 공헌이익으로 확정합니다.</li>
+      <li><strong>고효율 확대:</strong> 벌크, 애드부스트, 아세로라 쇼핑의 증액 상한과 한계 ROAS를 승인 안건으로 제시합니다.</li>
+      <li><strong>고객자산 데이터:</strong> 신규·재구매 비중과 제품별 검색 추이를 다음 보고의 필수 값으로 전환합니다.</li>
     </ol>
 
-    <h2>참고</h2>
+    <h2>6. 글로벌사업팀</h2>
+    <h3>6-1. 3개 회차 수치 비교</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>지표</th><th>9/2</th><th>9/7</th><th>9/14</th><th>직전 대비 변화</th><th>판정</th></tr></thead>
+        <tbody>
+          <tr><td>총판매가액</td><td class="number">53,533,974원</td><td class="number">53,533,974원</td><td class="number">60,533,974원</td><td class="number">+7,000,000원</td><td class="status">갱신</td></tr>
+          <tr><td>매출액</td><td class="number">49,079,502원</td><td class="number">49,079,502원</td><td class="number">54,824,082원</td><td class="number">+5,744,580원</td><td class="status">갱신</td></tr>
+          <tr><td>마진</td><td class="number">27,138,907원</td><td class="number">27,138,907원</td><td class="number">27,138,907원</td><td class="number">0원</td><td class="status">산식 확인</td></tr>
+          <tr><td>운영비</td><td class="number">80,707,461원</td><td class="number">80,707,461원</td><td class="number">101,241,958원</td><td class="number">+20,534,497원</td><td class="status">갱신</td></tr>
+          <tr><td>광고비</td><td class="number">102,717,156원</td><td class="number">102,717,156원</td><td class="number">103,360,621원</td><td class="number">+643,465원</td><td class="status">갱신</td></tr>
+          <tr><td>손익</td><td class="number">-156,285,710원*</td><td class="number">-156,285,710원*</td><td class="number">-177,463,672원</td><td class="number">-21,177,962원</td><td class="status">악화</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="source">* 9/2·9/7 손익은 당시 장표의 마진-운영비-광고비를 현재 회차와 같은 방식으로 계산한 비교값입니다. 당시 장표에 손익 행은 없었습니다.</p>
+
+    <h3>6-2. 직전 회의 요청사항 반영 여부</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>요청사항</th><th>반영 상태</th><th>확인 내용</th><th>남은 과제</th></tr></thead>
+        <tbody>
+          <tr><td>글로벌 최종 손익 추가</td><td class="status">반영</td><td>계획 262,747,726원, 실제 -177,463,672원 손익 행 추가</td><td>광고비 포함·제외 손익을 구분해 전사 카드와 연결</td></tr>
+          <tr><td>국가·프로젝트별 완료일 관리</td><td class="status">일부 반영</td><td>아마존 입고, 중국 판매, 왓슨·베트남·면세점 등 상태 갱신</td><td>담당자와 실적 매출·손익 연결</td></tr>
+          <tr><td>Qoo10 10월 성과 후 지속·중단 판단</td><td class="status">일부 반영</td><td>10월 1개월 연장과 추가 Q캐시 필요 제시</td><td>비용 상한, 목표 매출·ROAS, 중단 기준 필요</td></tr>
+          <tr><td>누적 매출 관리</td><td class="status">보완 필요</td><td>상단 실제 수치가 누적·월간·MTD 중 어떤 기준인지 불명확</td><td>7·8·9월 추이와 기준일 추가</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>6-3. 점검 및 우선 조치</h3>
+    <ol>
+      <li><strong>손익 달성률 수정:</strong> 계획 손익 262,747,726원 대비 실제 -177,463,672원은 단순 비율로 약 -67.54%인데 장표에는 -49.38%로 표시돼 산식 확인이 필요합니다.</li>
+      <li><strong>마진 정본 확인:</strong> 매출이 증가했는데 마진이 3개 회차 모두 27,138,907원으로 동일하므로 원가·환율·매출 귀속 산식을 재계산합니다.</li>
+      <li><strong>전사 카드 연결:</strong> 3페이지 글로벌 매출 0.0억원·공헌이익 -0.1억원과 38페이지 실적·손익의 범위를 맞춥니다.</li>
+      <li><strong>비용 통제 결정:</strong> 매출 증가액보다 운영비 증가액이 크므로 프로젝트별 유지·중단·회수 계획을 손익과 함께 제시합니다.</li>
+    </ol>
+
+    <h2>7. 유통사업팀</h2>
+    <h3>7-1. 3개 회차 수치 비교</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>항목</th><th>9/2</th><th>9/7</th><th>9/14</th><th>판정</th><th>비교 한계</th></tr></thead>
+        <tbody>
+          <tr><td>매출</td><td class="number">8월 42,000,000원</td><td class="number">8월 42,000,000원</td><td class="number">7월~9/10 누적 75,877,854원</td><td class="status">갱신</td><td>현재는 누적 기준</td></tr>
+          <tr><td>공헌이익</td><td class="number">8월 27,000,000원</td><td class="number">8월 27,000,000원</td><td class="number">누적 48,105,281원</td><td class="status">갱신</td><td>클리닉 포함 여부 차이</td></tr>
+          <tr><td>목표</td><td class="number">8월 매출 61,000,000원</td><td class="number">7월 15,000,000원 / 8월 61,000,000원</td><td class="number">하반기 451,100,000원 / 누적 177,000,000원</td><td class="status">구조 변경</td><td>월간·누적·하반기 혼용</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>7-2. 직전 회의 요청사항 반영 여부</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>요청사항</th><th>반영 상태</th><th>확인 내용</th><th>남은 과제</th></tr></thead>
+        <tbody>
+          <tr><td>누적 매출 관리표</td><td class="status">반영</td><td>7월~9/10 누적 목표·매출·공헌이익과 채널별 표 추가</td><td>달성률 분모 명시</td></tr>
+          <tr><td>완료·진행·예정 구분</td><td class="status">반영</td><td>41페이지에서 세 상태와 완료 조건·근거 표시</td><td>미래 일정은 완료 결과와 분리 유지</td></tr>
+          <tr><td>9~12월 월별 액션</td><td class="status">반영</td><td>월별 목표·핵심 액션·완료 기준·예상 결과·기한 추가</td><td>예상 매출·공헌이익의 채널별 근거 연결</td></tr>
+          <tr><td>특정 품목·채널 편중</td><td class="status">보완 필요</td><td>실적 대부분이 헬씨위드 74,060,460원에 집중</td><td>집중도와 신규 채널 전환 시점 KPI 관리</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>7-3. KPI·수치·표기 점검</h3>
+    <div class="table-wrap">
+      <table class="page-check">
+        <thead><tr><th>페이지</th><th>확인 내용</th><th>판정</th><th>회의 전 보완</th></tr></thead>
+        <tbody>
+          <tr><td>40</td><td>합계 누적 목표 177,000,000원, 누적 매출 74,060,460원인데 달성률은 16%로 표시</td><td class="status">분모 혼용</td><td>누적 목표 기준 약 41.8%, 하반기 목표 기준 약 16.4%로 제목·산식 통일</td></tr>
+          <tr><td>40</td><td>상단 누적 매출 75,877,854원과 채널표 합계 74,060,460원의 차이 1,817,394원은 클리닉 포함 여부로 보임</td><td class="status">범위 확인</td><td>클리닉을 별도 행으로 추가</td></tr>
+          <tr><td>40</td><td>헬씨위드 매출 74,060,460원에 달성률 92%가 표시되지만 누적 목표 35,000,000원·하반기 목표 77,000,000원 어느 기준과도 일치하지 않음</td><td class="status">계산 확인</td><td>달성률 산식 재계산</td></tr>
+          <tr><td>41</td><td>롯데마트는 협의 완료이나 실제 입점은 9/28 예정, 다이소는 재심사 보완이 남아 있음</td><td class="status">상태 구분</td><td>협의 완료와 입점·승인 완료 분리</td></tr>
+          <tr><td>42</td><td>12월 카드 기한이 11/06으로 표시됨</td><td class="status">의도 확인</td><td>선행 승인 기한인지 월 카드 오기인지 명시</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>7-4. 우선 조치와 의사결정 요청</h3>
+    <ol>
+      <li><strong>달성률 재계산:</strong> 하반기 목표·누적 목표·월 목표별 분모를 분리합니다.</li>
+      <li><strong>클리닉 별도 행:</strong> 상단과 채널 합계 차이를 해소하고 공헌이익도 같은 범위로 맞춥니다.</li>
+      <li><strong>편중 완화:</strong> 헬씨위드 외 롯데마트·다이소·하나로마트의 매출 전환일과 목표 기여액을 확정합니다.</li>
+      <li><strong>완료 기준 강화:</strong> 협의·심사 통과·발주·입점·첫 매출을 별도 상태로 관리합니다.</li>
+    </ol>
+
+    <h2>8. 팀 간 연결 이슈와 경영진 공통 의사결정 요청</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>우선순위</th><th>공통 안건</th><th>연결 팀</th><th>결정 필요사항</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr><td class="number">1</td><td>수치 정본과 기준일 통일</td><td>이커머스·KPI·글로벌·유통</td><td>원장, 회계 귀속, 기준일, 포함 비용을 장표마다 의무 표시</td><td>3·23·30·35·38·40페이지</td></tr>
+          <tr><td class="number">2</td><td>광고비·편성 확대 기준</td><td>미디어커머스·이커머스</td><td>원가 반영 공헌이익과 한계 ROAS 기준으로 증액 상한 승인</td><td>14·17·30~32페이지</td></tr>
+          <tr><td class="number">3</td><td>신제품 판매계획 연결</td><td>제품·미디어커머스·이커머스·유통·글로벌</td><td>초도 수량, 채널별 매출·공헌이익, 발주 시점 확정</td><td>17·19~21·42페이지</td></tr>
+          <tr><td class="number">4</td><td>글로벌 비용 통제</td><td>글로벌·경영지원</td><td>누적 손실 -177,463,672원 기준 프로젝트별 유지·중단·회수 우선순위 결정</td><td>38페이지</td></tr>
+          <tr><td class="number">5</td><td>유통 편중 완화</td><td>유통·제품·SCM</td><td>롯데마트·다이소 입점 조건과 헬씨위드 외 채널 목표 기여액 승인</td><td>40~42페이지</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>9. 회의 전 최종 수정 순서</h2>
+    <ol>
+      <li><strong>이커머스 30·35페이지 SA 수치 통일</strong> — 광고비, CPA, 구매 ROAS를 같은 원장으로 재산출합니다.</li>
+      <li><strong>글로벌 38페이지 손익 달성률·마진 재계산</strong> — -49.38% 표기와 3회차 동일 마진을 확인합니다.</li>
+      <li><strong>유통 40페이지 달성률 분모 통일</strong> — 누적 목표와 하반기 목표를 분리합니다.</li>
+      <li><strong>미디어커머스 17페이지 40회·44회 불일치 수정</strong> — 목표와 세부 편성 합계를 맞춥니다.</li>
+      <li><strong>전사 3페이지와 팀별 상세 연결</strong> — 매출·공헌이익 카드와 상세 원장의 기준일·집계 범위를 표시합니다.</li>
+      <li><strong>담당자·기한·예상 효과 보강</strong> — 제품 출시, 광고 증액, 글로벌 회수, 유통 입점 안건을 실제 의사결정 표로 닫습니다.</li>
+    </ol>
+
+    <h2>10. 확인 자료와 제한사항</h2>
     <ul class="source">
-      <li><code>종합_KPI회의_DAY_260914</code>는 총 9페이지이며, 검토 시점에 실제 내용이 확인된 제품팀 자료는 4~6페이지였습니다.</li>
-      <li>미디어커머스 본문은 확인되지 않았고 이커머스·글로벌·유통사업은 구분 표지만 확인돼 이번 데모 보고서의 평가 대상에서 제외했습니다.</li>
-      <li>현재 자료가 회의 전 작성 중인 파일이므로 이후 업데이트에 따라 일정과 상태가 바뀔 수 있습니다.</li>
-      <li>제품팀 4~6페이지와 직전 제품팀 5~7페이지는 이미지 기반 장표를 시각적으로 대조했습니다.</li>
-      <li>가격·원가·발주 수량·예상 손익 원자료는 제공 자료에서 확인되지 않아 해당 수치를 추정하지 않았습니다.</li>
+      <li><code>종합_KPI회의_DAY_260914</code> 42페이지 전체를 이미지와 Google Slides 표·텍스트로 확인했습니다.</li>
+      <li><code>종합_경영회의회의록_DAY_260907</code> 전체와 <code>종합_경영회의회의록_DAY_260904</code>의 결정사항·팀별 요청을 확인했습니다.</li>
+      <li><code>종합_KPI회의_DAY_260907</code> 45페이지, <code>종합_KPI회의_DAY_260902</code> 49페이지 및 기존 검토 보고서를 비교했습니다.</li>
+      <li>서로 다른 기간·채널·비용 범위로 보이는 수치는 오류로 단정하지 않고 <code>범위 확인</code>으로 분리했습니다.</li>
+      <li>자료에서 확인되지 않은 담당자·기한·매출·손익은 추정하지 않았습니다.</li>
+      <li>현재 회의자료는 2026-09-11 21:31(KST) 수정본을 기준으로 검토했습니다.</li>
     </ul>
   </main>
 </body>
