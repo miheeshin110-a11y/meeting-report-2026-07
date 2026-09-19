@@ -10,6 +10,7 @@ GitHub Pages 배포용 정적 HTML 보고서입니다.
 - 고정 제출 대상: 제품팀, 미디어커머스, 이커머스, 글로벌, 유통사업
 - 과거 기준 보고서: `kpi-260902-review.html`, `kpi-260907-review.html`
 - 9월 14일 종합 검토 보고서: `kpi-260914-review.html`
+- 9월 21일 종합 검토 보고서: `kpi-260921-review.html` — 실적데이터·이전 회의록·GitHub 보고서 교차검토, 팀별 이슈·개선안·대표 보고용 액션 추적
 - 새 보고서 템플릿: `kpi-report-template.html`
 - 작성 규칙: `AGENTS.md`
 - 새 보고서 파일명: `kpi-YYMMDD-review.html`
