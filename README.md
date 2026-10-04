@@ -11,7 +11,7 @@ GitHub Pages 배포용 정적 HTML 보고서입니다.
 - 과거 기준 보고서: `kpi-260902-review.html`, `kpi-260907-review.html`
 - 9월 14일 종합 검토 보고서: `kpi-260914-review.html`
 - 9월 21일 종합 검토 보고서: `kpi-260921-review.html` — 실적데이터·이전 회의록·GitHub 보고서 교차검토, 팀별 이슈·개선안·대표 보고용 액션 추적
-- [10월 6일 종합 검토 보고서](kpi-261006-review.html) — 9월 전체 마감, 행사별 최종 손익 누락·팀별 미종결 과제 검토. 제품팀은 회의자료 준비 안 됨으로 검토 제외. GitHub 게시만 진행, Slack 발송 보류
+- [10월 6일 종합 검토 보고서](kpi-261006-review.html) — 9월 전체 마감, 행사별 최종 손익 누락·팀별 미종결 과제 검토. 제품팀은 회의자료 준비 안 됨으로 검토 제외. GitHub 게시 및 Slack 공유 대상
 - 새 보고서 템플릿: `kpi-report-template.html`
 - 작성 규칙: `AGENTS.md`
 - 새 보고서 파일명: `kpi-YYMMDD-review.html`
