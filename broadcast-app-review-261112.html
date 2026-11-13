@@ -302,6 +302,20 @@ h2 .hl { font-style: normal; color: var(--blue-ink); }
 .phone.vid .vcap { font-size: 14px; color: var(--faint); }
 .vnote { font-size: 15px; color: var(--faint); }
 
+
+/* 목차 */
+.toc { position: fixed; top: calc(16px + env(safe-area-inset-top, 0px)); bottom: calc(68px + env(safe-area-inset-bottom, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); width: min(360px, calc(100vw - 32px)); z-index: 9; background: var(--paper); border-radius: 14px; box-shadow: 0 12px 40px rgba(0, 0, 0, .18); display: flex; flex-direction: column; overflow: hidden; }
+.toc-h { display: flex; justify-content: space-between; align-items: center; padding: 16px 18px 12px; border-bottom: 1px solid var(--line); }
+.toc-h b { font-size: 17px; }
+.toc-h button { font: 600 13px var(--font); border: 1px solid #cfcfcf; background: var(--paper); border-radius: 8px; padding: 5px 10px; cursor: pointer; color: var(--ink); }
+.toc-l { list-style: none; margin: 0; padding: 8px 10px 14px; overflow-y: auto; }
+.toc-l .sec { font-size: 12px; font-weight: 800; color: var(--blue-ink); letter-spacing: .04em; padding: 12px 8px 4px; }
+.toc-l button { width: 100%; display: grid; grid-template-columns: 30px 1fr; gap: 6px; align-items: baseline; text-align: left; font: 600 15px var(--font); color: var(--ink); background: none; border: 0; border-radius: 8px; padding: 8px; cursor: pointer; }
+.toc-l button span { font-variant-numeric: tabular-nums; color: var(--faint); font-weight: 700; }
+.toc-l button:hover, .toc-l button:focus-visible { background: var(--well); outline: none; }
+.toc-l button[aria-current="true"] { background: var(--blue-tint); color: var(--blue-ink); }
+.toc-l button[aria-current="true"] span { color: var(--blue-ink); }
+
 /* controls */
 .ctl { position: fixed; left: 0; right: 0; bottom: 0; height: calc(56px + env(safe-area-inset-bottom, 0px)); padding: 0 max(16px, env(safe-area-inset-right, 0px)) env(safe-area-inset-bottom, 0px) max(16px, env(safe-area-inset-left, 0px)); display: flex; align-items: center; gap: 12px; }
 .ctl .prog { flex: 1; height: 4px; border-radius: 2px; background: #d3d6dc; overflow: hidden; min-width: 40px; }
@@ -517,9 +531,14 @@ h2 .hl { font-style: normal; color: var(--blue-ink); }
   <button type="button" id="next" aria-label="다음 슬라이드">다음 →</button>
   <div class="prog" aria-hidden="true"><i id="bar"></i></div>
   <button type="button" id="noteBtn" class="hide-sm" aria-pressed="false">발표 메모 (N)</button>
+  <button type="button" id="tocBtn" aria-expanded="false" aria-controls="toc">목차 (T)</button>
   <button type="button" id="gridBtn">전체 보기 (G)</button>
   <button type="button" id="fsBtn" class="hide-sm">전체 화면 (F)</button>
 </nav>
+<aside class="toc" id="toc" hidden aria-label="목차">
+  <div class="toc-h"><b>목차</b><button type="button" id="tocClose" aria-label="목차 닫기">닫기</button></div>
+  <ol class="toc-l" id="tocList"></ol>
+</aside>
 <div class="grid" id="grid" hidden><div class="gh"><span>전체 슬라이드</span><button type="button" class="ctl-b" id="gridClose">닫기 (Esc)</button></div><div class="gl" id="gl"></div></div>
 
 <script>
@@ -649,6 +668,26 @@ h2 .hl { font-style: normal; color: var(--blue-ink); }
   vp.addEventListener("touchend", function (e) { if (x0 == null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1)); x0 = null; });
   window.addEventListener("resize", function () { fit(); if (!grid.hidden) scaleThumbs(); });
   window.addEventListener("hashchange", function () { show(fromHash()); });
+  // 목차: sections → slide titles; click to jump
+  var TOC = [
+    ["시작", [[1, "표지"], [2, "배경 · 세 가지 구조적 문제"], [3, "전체 흐름 · 7단계"]]],
+    ["담당자 화면", [[4, "로그인 → 방송 상세"], [5, "짐 체크리스트"], [6, "출발 · 현장 기록"], [7, "위치 관리"]]],
+    ["관리자 화면", [[8, "담당부서가 직접 커스터마이징"]]],
+    ["시범 운영", [[9, "실제 방송 한 건"], [10, "시범 운영 결과 · 13건"], [11, "현장 메모"]]],
+    ["정리", [[12, "발견한 점 · 과제"], [13, "다음 계획"]]]
+  ];
+  var toc = document.getElementById("toc"), tocList = document.getElementById("tocList"), tocBtn = document.getElementById("tocBtn");
+  tocList.innerHTML = TOC.map(function (g) { return '<li class="sec">' + g[0] + "</li>" + g[1].map(function (it) { return '<li><button type="button" data-goto="' + it[0] + '"><span>' + it[0] + "</span>" + it[1] + "</button></li>"; }).join(""); }).join("");
+  function markToc() { Array.prototype.forEach.call(tocList.querySelectorAll("[data-goto]"), function (b) { b.setAttribute("aria-current", String(Number(b.getAttribute("data-goto")) === cur + 1)); }); }
+  function toggleToc(open) { toc.hidden = open === undefined ? !toc.hidden : !open; tocBtn.setAttribute("aria-expanded", String(!toc.hidden)); if (!toc.hidden) { markToc(); var c = tocList.querySelector('[aria-current="true"]'); if (c) c.focus(); } }
+  tocBtn.onclick = function () { toggleToc(); };
+  document.getElementById("tocClose").onclick = function () { toggleToc(false); };
+  tocList.addEventListener("click", function (e) { var b = e.target.closest("[data-goto]"); if (!b) return; show(Number(b.getAttribute("data-goto")) - 1); markToc(); });
+  document.addEventListener("keydown", function (e) {
+    if (e.target && /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
+    if (e.key === "t" || e.key === "T") { e.preventDefault(); toggleToc(); }
+    else if (e.key === "Escape" && !toc.hidden) toggleToc(false);
+  });
   fit(); show(fromHash());
 })();
 </script>
